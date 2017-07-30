@@ -7,6 +7,8 @@ fn main() {
     print_x(x);
     let y = add_one(x);
     println!("add_one:{}",y);
+    let f: fn(i32) -> i32 = add_one;
+    println!("f():{}",f(4));
 }
 
 
