@@ -1,4 +1,13 @@
-fn main() {
+//! # モジュールドキュメント
+//!
+//! このライブラリは....
+
+/// # ドキュメンテーションコメント
+/// ## markdownをサポート
+/// ```
+/// do_something();
+/// ```
+fn main(){
     println!("Hello, world!");
     let x = 5;
     print_x(x);
