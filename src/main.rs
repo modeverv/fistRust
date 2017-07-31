@@ -8,7 +8,7 @@
 /// do_something();
 /// ```
 fn main(){
-    /*
+
     println!("Hello, world!");
     let x = 5;
     print_x(x);
@@ -20,8 +20,9 @@ fn main(){
     check_char();
     check_array();
     check_tuple();
-    */
     check_if();
+    check_loop_while_for();
+
 }
 
 // 日本語コメント
@@ -70,4 +71,29 @@ fn check_if() {
     println!("{}",y);
 }
 
+fn check_loop_while_for() {
+    let mut check = true;
+    let mut i = 0;
+    loop {
+        i = i + 1;
+        if i > 3 { break; }
+    }
+    while check {
+        i = i + 1;
+        if i > 10 { check = false; }
+    }
+    for x in 0..10 {
+        println!("{}",x);
+    }
+    for (i,j) in (5..10).enumerate() {
+        println!("i = {}, j = {}",i,j);
+    }
+    'outer: for x in 0..10 {
+        'inner: for y in 0..10 {
+            if x % 2 == 0 { continue 'outer;} // x ループを継続
+            if y % 2 == 0 { continue 'inner;} // y ループを継続
+            println!("x:{},y:{}",x,y);
+        }
+    }
+}
 
