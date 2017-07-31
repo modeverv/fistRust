@@ -8,6 +8,7 @@
 /// do_something();
 /// ```
 fn main(){
+    /*
     println!("Hello, world!");
     let x = 5;
     print_x(x);
@@ -19,6 +20,8 @@ fn main(){
     check_char();
     check_array();
     check_tuple();
+    */
+    check_if();
 }
 
 // 日本語コメント
@@ -55,5 +58,16 @@ fn check_tuple(){
     println!("{}",tuple.0);
 }
 
+
+fn check_if() {
+    let x = 5;
+    if x == 5 {
+        println!("aaa");
+    } else if x == 6 {
+        println!("bbb");
+    }
+    let y = if x == 5 {10}else{32};
+    println!("{}",y);
+}
 
 
