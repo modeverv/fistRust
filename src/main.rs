@@ -25,6 +25,7 @@ fn main(){
     check_foo();
     check_foo2();
     check_mut();
+    check_lifetime();
 }
 
 // 日本語コメント
@@ -135,3 +136,12 @@ fn check_mut() {
     println!("{}", x);
 }
 
+/// #ライフタイム
+struct Foo<'a> {
+    x: &'a i32,
+}
+fn check_lifetime(){
+    let y = &5;
+    let f = Foo{x:y};
+    println!("{}",f.x);
+}
