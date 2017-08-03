@@ -22,7 +22,7 @@ fn main(){
     check_tuple();
     check_if();
     check_loop_while_for();
-
+    check_foo();
 }
 
 // 日本語コメント
@@ -95,5 +95,18 @@ fn check_loop_while_for() {
             println!("x:{},y:{}",x,y);
         }
     }
+}
+
+/// ＃退屈なRust
+/// こんなRustはいやだ
+fn check_foo() {
+    let v1 = vec![1, 2, 3];
+    let v2 = vec![1, 2, 3];
+    let (v1, v2, answer) = foo(v1, v2);
+    println!("{}", answer);
+}
+
+fn foo(v1: Vec<i32>, v2: Vec<i32>) -> (Vec<i32>, Vec<i32>, i32) {
+    (v1, v2, 42)
 }
 

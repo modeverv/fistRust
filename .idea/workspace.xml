@@ -19,9 +19,12 @@
       <file leaf-file-name="main.rs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="528">
+              <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+              <folding>
+                <element signature="e#1938#1939#0" expanded="true" />
+                <element signature="e#1957#1958#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -699,7 +702,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1938#1939#0" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -734,7 +740,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#1938#1939#0" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -795,9 +804,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="528">
+          <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <element signature="e#1938#1939#0" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
