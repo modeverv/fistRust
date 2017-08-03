@@ -23,6 +23,8 @@ fn main(){
     check_if();
     check_loop_while_for();
     check_foo();
+    check_foo2();
+    check_mut();
 }
 
 // 日本語コメント
@@ -108,5 +110,28 @@ fn check_foo() {
 
 fn foo(v1: Vec<i32>, v2: Vec<i32>) -> (Vec<i32>, Vec<i32>, i32) {
     (v1, v2, 42)
+}
+
+/// #借用
+/// 借用では束縛はimmutable
+fn check_foo2() {
+    let v1 = vec![1, 2, 3];
+    let answer = foo2(&v1);
+    println!("{}", answer);
+}
+
+fn foo2(v: &Vec<i32>) -> i32 {
+    //v.push(3) // これは出来ない
+    42
+}
+
+/// #&mut参照
+fn check_mut() {
+    let mut x = 5;
+    {
+        let y = &mut x;
+        *y += 1;
+    }
+    println!("{}", x);
 }
 
