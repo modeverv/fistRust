@@ -28,6 +28,7 @@ fn main(){
     check_lifetime();
     check_mut2();
     check_struct();
+    check_enum1()
 }
 
 // 日本語コメント
@@ -191,4 +192,19 @@ fn check_struct() {
     let length = Inches(10);
     let Inches(len) = length;
     println!("{}",len);
+}
+
+// enum
+
+enum Message {
+    Quit,
+    ChangeColor(i32, i32, i32),
+    Move { x: i32, y: i32 },
+    Write(String),
+}
+
+fn check_enum1() {
+    let m = Message::Write("Hello world".to_string());
+    let v = vec!["Hello".to_string(),"World".to_string()];
+    let v1:Vec<Message> = v.into_iter().map(Message::Write).collect();
 }
