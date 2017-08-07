@@ -207,4 +207,8 @@ fn check_enum1() {
     let m = Message::Write("Hello world".to_string());
     let v = vec!["Hello".to_string(),"World".to_string()];
     let v1:Vec<Message> = v.into_iter().map(Message::Write).collect();
+
+    for x in v1 {
+        //println!(":?",x);
+    }
 }
