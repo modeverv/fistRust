@@ -27,6 +27,7 @@ fn main(){
     check_mut();
     check_lifetime();
     check_mut2();
+    check_struct();
 }
 
 // 日本語コメント
@@ -149,14 +150,15 @@ fn check_lifetime(){
 
 use std::sync::Arc;
 use std::cell::RefCell;
+
 /// exterior mutabillity
 /// interior mutabillity
-fn check_mut2(){
+fn check_mut2() {
     let mut x = 5;
     {
         let mut y = &mut x;
     }
-    println!("{}",x);
+    println!("{}", x);
 
     // exterior
     let x1 = Arc::new(5);
@@ -164,6 +166,29 @@ fn check_mut2(){
     // interior
     let x2 = RefCell::new(3);
     let y2 = x2.borrow_mut();
+    //....わからん
+}
 
-    
+struct Point {
+    x: i32,
+    y: i32,
+}
+// タプル構造体
+struct Color(i32,i32,i32);
+struct Inches(i32);
+
+fn check_struct() {
+    let mut point = Point { x: 0, y: 0 };
+    point.x = 5;
+    println!("{},{}", point.x, point.y);
+    let point = point; // ここから束縛はここから変更不可
+
+    let mut p2 = Point { y: 1, ..point };
+    println!("{},{}", p2.x, p2.y);
+
+    let black = Color(0,0,0);
+    //newtypeパターン
+    let length = Inches(10);
+    let Inches(len) = length;
+    println!("{}",len);
 }
