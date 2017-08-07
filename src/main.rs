@@ -26,6 +26,7 @@ fn main(){
     check_foo2();
     check_mut();
     check_lifetime();
+    check_mut2();
 }
 
 // 日本語コメント
@@ -144,4 +145,25 @@ fn check_lifetime(){
     let y = &5;
     let f = Foo{x:y};
     println!("{}",f.x);
+}
+
+use std::sync::Arc;
+use std::cell::RefCell;
+/// exterior mutabillity
+/// interior mutabillity
+fn check_mut2(){
+    let mut x = 5;
+    {
+        let mut y = &mut x;
+    }
+    println!("{}",x);
+
+    // exterior
+    let x1 = Arc::new(5);
+    let y1 = x1.clone();
+    // interior
+    let x2 = RefCell::new(3);
+    let y2 = x2.borrow_mut();
+
+    
 }
