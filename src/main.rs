@@ -28,7 +28,8 @@ fn main(){
     check_lifetime();
     check_mut2();
     check_struct();
-    check_enum1()
+    check_enum1();
+    check_match();
 }
 
 // 日本語コメント
@@ -205,10 +206,42 @@ enum Message {
 
 fn check_enum1() {
     let m = Message::Write("Hello world".to_string());
-    let v = vec!["Hello".to_string(),"World".to_string()];
-    let v1:Vec<Message> = v.into_iter().map(Message::Write).collect();
+    let v = vec!["Hello".to_string(), "World".to_string()];
+    let v1: Vec<Message> = v.into_iter().map(Message::Write).collect();
 
     for x in v1 {
         //println!(":?",x);
     }
+}
+
+fn check_match() {
+    let x = 5;
+    match x {
+        1 => println!("one"),
+        2 => println!("one"),
+        3 => println!("one"),
+        4 => println!("one"),
+        5 => println!("five"),
+        6 => println!("one"),
+        _ => println!("else"),
+    }
+    let m = Message::Write("aaaa".to_string());
+    process_message(m);
+}
+fn quit(){}
+fn change_color(x:i32,y:i32,z:i32){}
+fn move_cursor(x:i32,y:i32){}
+fn process_message(msg:Message){
+    let x = 1;
+    let y = 2;
+    let r = 3;
+    let g = 4;
+    let b = 5;
+    match msg {
+        Message::Quit => quit(),
+        Message::ChangeColor(r,g,b) => change_color(r,g,b),
+        Message::Move {x:x,y:y} => move_cursor(x,y),
+        Message::Write(s) => println!("{}",s),
+    }
+
 }
