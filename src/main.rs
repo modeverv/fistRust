@@ -30,6 +30,7 @@ fn main(){
     check_struct();
     check_enum1();
     check_match();
+    check_pattern();
 }
 
 // 日本語コメント
@@ -242,6 +243,32 @@ fn process_message(msg:Message){
         Message::ChangeColor(r,g,b) => change_color(r,g,b),
         Message::Move {x:x,y:y} => move_cursor(x,y),
         Message::Write(s) => println!("{}",s),
+    }
+
+}
+
+enum OptionalTuple {
+    Value(i32,i32),
+    Missing,
+}
+fn check_pattern(){
+    let x = 1;
+
+    match x {
+        1 | 2 => println!("{}",x),
+        _ => println!("死ぬ"),
+    }
+
+    let ori = Point{x:10,y:20};
+
+    match ori {
+        Point{x:x1,y:y1} => println!("{},{}",x1,y1),
+    }
+
+    let o = OptionalTuple::Value(1,2);
+    match o {
+        OptionalTuple::Value(x,y) => println!("Value - {},{}",x,y),
+        OptionalTuple::Missing => println!("Missing")
     }
 
 }
