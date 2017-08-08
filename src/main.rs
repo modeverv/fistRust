@@ -29,8 +29,9 @@ fn main(){
     check_mut2();
     check_struct();
     check_enum1();
-    check_match();
+    check_mh();
     check_pattern();
+    check_met();
 }
 
 // 日本語コメント
@@ -215,7 +216,7 @@ fn check_enum1() {
     }
 }
 
-fn check_match() {
+fn check_mh() {
     let x = 5;
     match x {
         1 => println!("one"),
@@ -271,4 +272,67 @@ fn check_pattern(){
         OptionalTuple::Missing => println!("Missing")
     }
 
+}
+
+
+struct Circle {
+    x: f64,
+    y: f64,
+    radius: f64,
+}
+
+impl Circle {
+    fn area(&self) -> f64 {
+        std::f64::consts::PI * (self.radius * self.radius)
+    }
+}
+
+impl Circle {
+    fn new(x: f64, y: f64, radius: f64) -> Circle {
+        Circle {
+            x: x,
+            y: y,
+            radius: radius,
+        }
+    }
+}
+
+struct CircleBuilder {
+    x: f64,
+    y: f64,
+    radius: f64,
+}
+
+impl CircleBuilder {
+    fn new() -> CircleBuilder {
+        CircleBuilder { x: 0.0, y: 0.0, radius: 1.0, }
+    }
+
+    fn x(&mut self, coordinate: f64) -> &mut CircleBuilder {
+        self.x = coordinate;
+        self
+    }
+
+    fn y(&mut self, coordinate: f64) -> &mut CircleBuilder {
+        self.y = coordinate;
+        self
+    }
+
+    fn radius(&mut self, radius: f64) -> &mut CircleBuilder {
+        self.radius = radius;
+        self
+    }
+
+    fn finalize(&self) -> Circle {
+        Circle { x: self.x, y: self.y, radius: self.radius }
+    }
+}
+
+fn check_met() {
+    let c = Circle{x:0.0,y:0.0,radius:2.0};
+    println!("{}",c.area());
+    let c2 = Circle::new(1.0,2.0,2.0);
+    println!("{}",c2.area());
+    let c3 = CircleBuilder::new().x(1.0).y(1.0).radius(4.0).finalize();
+    println!("{}",c3.area());
 }
